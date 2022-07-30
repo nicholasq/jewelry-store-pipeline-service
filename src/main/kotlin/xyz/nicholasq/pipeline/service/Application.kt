@@ -1,4 +1,4 @@
-package jewelry.store.pipeline.service
+package xyz.nicholasq.pipeline.service
 
 import io.micronaut.runtime.Micronaut.*
 

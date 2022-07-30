@@ -1,0 +1,6 @@
+POST {{protocol}}{{host}}/api/v1/pipeline
+Content-Type: application/json
+
+{
+  "name": "My new pipeline"
+}

@@ -15,22 +15,40 @@ repositories {
 
 dependencies {
     kapt("io.micronaut:micronaut-http-validation")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+
+    implementation("org.litote.kmongo:kmongo-async:4.6.1")
+    implementation("org.litote.kmongo:kmongo-coroutine:4.6.1")
+
     implementation("io.micronaut:micronaut-http-client")
     implementation("io.micronaut:micronaut-jackson-databind")
     implementation("io.micronaut.kotlin:micronaut-kotlin-runtime")
-    implementation("jakarta.annotation:jakarta.annotation-api")
-    implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
-    runtimeOnly("ch.qos.logback:logback-classic")
+    implementation("io.micronaut.mongodb:micronaut-mongo-reactive")
+    implementation("io.micronaut.reactor:micronaut-reactor")
+    implementation("io.micronaut.reactor:micronaut-reactor-http-client")
+    implementation("io.micronaut:micronaut-management")
+    implementation("io.micronaut.cache:micronaut-cache-caffeine")
     implementation("io.micronaut:micronaut-validation")
 
+    implementation("jakarta.annotation:jakarta.annotation-api")
+
+    implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
+
+    runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 
+    testImplementation("org.testcontainers:junit-jupiter")
+    testImplementation("org.testcontainers:mongodb")
+    testImplementation("org.testcontainers:testcontainers")
+
+    testImplementation("io.micronaut.test:micronaut-test-rest-assured:3.4.0")
 }
 
 
 application {
-    mainClass.set("jewelry.store.pipeline.service.ApplicationKt")
+    mainClass.set("xyz.nicholasq.pipeline.service.ApplicationKt")
 }
 java {
     sourceCompatibility = JavaVersion.toVersion("17")
@@ -54,7 +72,7 @@ micronaut {
     testRuntime("junit5")
     processing {
         incremental(true)
-        annotations("jewelry.store.pipeline.service.*")
+        annotations("xyz.nicholasq.pipeline.service.*")
     }
 }
 

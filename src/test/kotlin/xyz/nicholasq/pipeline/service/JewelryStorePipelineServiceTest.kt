@@ -1,4 +1,4 @@
-package jewelry.store.pipeline.service
+package xyz.nicholasq.pipeline.service
 import io.micronaut.runtime.EmbeddedApplication
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest
 import org.junit.jupiter.api.Assertions
